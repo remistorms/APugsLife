@@ -87,7 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5067836499680771173}
   - component: {fileID: 8192182952597267951}
-  - component: {fileID: 1972168716282959212}
+  - component: {fileID: 6256116457456617204}
   m_Layer: 8
   m_Name: Interactable
   m_TagString: Untagged
@@ -123,7 +123,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1972168716282959212
+--- !u!114 &6256116457456617204
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,23 +132,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7396633937265076862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 512030aebaa7c094eaf3468b41d1d242, type: 3}
+  m_Script: {fileID: 11500000, guid: b16b9f1c52d7efd4ea31f47098d2559a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactableName: Sphere
-  isBeingSniffed: 0
-  isBeingBarked: 0
-  isBeingEaten: 0
-  isBeingMarked: 0
-  hasBeenSniffed: 0
-  hasBeenBarked: 0
-  hasBeenEaten: 0
-  hasBeenMarked: 0
-  sniffPercentage: 0
-  sniffTimeNeeded: 1
-  barkPercentage: 0
-  barkTimeNeeded: 1
-  eatPercentage: 0
-  eatTimeNeeded: 1
-  markPercentage: 0
-  markTimeNeeded: 1
+  interactableSO: {fileID: 11400000, guid: 1a1787d1566e28845bc77bf72abb3278, type: 2}

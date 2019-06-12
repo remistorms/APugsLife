@@ -4,18 +4,48 @@ using UnityEngine;
 
 public class Sniffer : MonoBehaviour
 {
-    public bool isSniffing;
+    public int SnifferLevel = 1;
+    public float SnifferRange = 1.0f;
+    public LayerMask layerMask;
+
+    public List<Interactable> interactablesInsideSnifferRange;
 
     private void Update()
     {
-        if ( Input.GetKey(KeyCode.Space) )
+        if (Input.GetButtonDown("Fire1"))
         {
-            isSniffing = true;
+            Debug.Log("Fire Button 1 has been pressed");
+            //Create a sphere
+            Collider[] collidersInRange = Physics.OverlapSphere(transform.position, SnifferRange, layerMask);
+            interactablesInsideSnifferRange = new List<Interactable>();
+
+            if (collidersInRange.Length > 0)
+            {
+                for (int i = 0; i < collidersInRange.Length; i++)
+                {
+                    if (collidersInRange[i].GetComponent<Interactable>() != null)
+                    {
+                        Interactable interactable = collidersInRange[i].GetComponent<Interactable>();
+                        interactable.isBeingSniffed = true;
+                        interactablesInsideSnifferRange.Add(interactable);
+                    }
+                }
+            }
+            
         }
-        else
+
+        if (Input.GetButtonUp("Fire1"))
         {
-            isSniffing = false;
+            Debug.Log("Fire Button 1 has been released");
+
+            if (interactablesInsideSnifferRange.Count > 0)
+            {
+                for (int i = 0; i < interactablesInsideSnifferRange.Count; i++)
+                {
+                    interactablesInsideSnifferRange[i].isBeingSniffed = false;
+                }
+                interactablesInsideSnifferRange.Clear();
+            }
         }
     }
-
 }

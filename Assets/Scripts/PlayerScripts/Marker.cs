@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Marker : MonoBehaviour
 {
+    /*
     public bool isMarking = false;
     public float waterLevel;
     public float waterDepleteSpeed;
@@ -32,7 +33,7 @@ public class Marker : MonoBehaviour
             {
                 if (col.GetComponent<Markable>() != null)
                 {
-                    col.GetComponent<Markable>().Mark( Time.deltaTime * waterDepleteSpeed );
+                    col.GetComponent<Markable>().Interact( Time.deltaTime * waterDepleteSpeed );
                 }
             }
 
@@ -44,4 +45,5 @@ public class Marker : MonoBehaviour
     {
         waterLevel += _waterLevel;
     }
+    */
 }

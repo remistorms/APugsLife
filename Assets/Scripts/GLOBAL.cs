@@ -10,6 +10,7 @@ public class GLOBAL : MonoBehaviour
     public Events_Manager m_Events;
     public Level_Manager m_Level;
     public IO_Manager m_IO;
+    public Score_Manager m_Score;
 
     private void Awake()
     {
@@ -19,7 +20,7 @@ public class GLOBAL : MonoBehaviour
         }
         else
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
 
         DontDestroyOnLoad(this);
@@ -39,6 +40,7 @@ public class GLOBAL : MonoBehaviour
         m_Events.Initialize();
         m_Level.Initialize();
         m_IO.Initialize();
+        m_Score.Initialize();
 
         //Another wait
         yield return null;

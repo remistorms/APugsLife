@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Events: {fileID: 3890419107833590554}
   m_Level: {fileID: 2319706802239240603}
   m_IO: {fileID: 173142586149778472}
+  m_Score: {fileID: 1379590307210596586}
 --- !u!1 &3890419107833590556
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,6 +129,7 @@ GameObject:
   - component: {fileID: 3890419107833590554}
   - component: {fileID: 2319706802239240603}
   - component: {fileID: 173142586149778472}
+  - component: {fileID: 1379590307210596586}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -198,3 +200,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 558fb2377e76b4b15bda7c92c60dab52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1379590307210596586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3890419107833590556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a3e8a006db2a449ebe966fb6f0d9285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highScore: 0
+  roundScore: 0

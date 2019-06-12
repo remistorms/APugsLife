@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 1528014962242380237}
   - component: {fileID: 1528014962242380238}
   - component: {fileID: 4694562854422288057}
-  - component: {fileID: 5411107735456751372}
+  - component: {fileID: 570205694}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -191,8 +191,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DogName: Santiago
   HealthPoints: 100
-  marker: {fileID: 0}
-  playerMovement: {fileID: 0}
 --- !u!114 &4694562854422288057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,7 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 1
   moveSpeed: 5
---- !u!114 &5411107735456751372
+--- !u!114 &570205694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,13 +214,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6886777721425100499}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c14028535600944e3bf169f527a2ee28, type: 3}
+  m_Script: {fileID: 11500000, guid: 6157101f740d14400bbec90a9de5d82f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMarking: 0
-  waterLevel: 50
-  waterDepleteSpeed: 1
-  markerPosition: {fileID: 1823861709685225451}
+  isSniffing: 0
 --- !u!1 &6886777721813986411
 GameObject:
   m_ObjectHideFlags: 0

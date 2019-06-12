@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Sniffer : MonoBehaviour
 {
+    public Color GizmoColor;
     public int SnifferLevel = 1;
     public float SnifferRange = 1.0f;
     public LayerMask layerMask;
@@ -14,7 +15,6 @@ public class Sniffer : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Debug.Log("Fire Button 1 has been pressed");
             //Create a sphere
             Collider[] collidersInRange = Physics.OverlapSphere(transform.position, SnifferRange, layerMask);
             interactablesInsideSnifferRange = new List<Interactable>();
@@ -36,7 +36,6 @@ public class Sniffer : MonoBehaviour
 
         if (Input.GetButtonUp("Fire1"))
         {
-            Debug.Log("Fire Button 1 has been released");
 
             if (interactablesInsideSnifferRange.Count > 0)
             {
@@ -46,6 +45,19 @@ public class Sniffer : MonoBehaviour
                 }
                 interactablesInsideSnifferRange.Clear();
             }
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = GizmoColor;
+        if (Input.GetButtonUp("Fire1"))
+        {
+            Gizmos.DrawSphere(transform.position, SnifferRange);
+        }
+        else
+        {
+            Gizmos.DrawWireSphere(transform.position, SnifferRange);
         }
     }
 }

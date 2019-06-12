@@ -22,19 +22,19 @@ public abstract class Interactable : MonoBehaviour
     [Header("Interactability Times")]
     [Range(0, 1)]
     public float sniffPercentage;
-    public float sniffCurrentTime;
+    protected float sniffCurrentTime;
     public float sniffTimeNeeded;
     [Range(0, 1)]
     public float barkPercentage;
-    public float barkCurrentTime;
+    protected float barkCurrentTime;
     public float barkTimeNeeded;
     [Range(0, 1)]
     public float eatPercentage;
-    public float eatCurrentTime;
+    protected float eatCurrentTime;
     public float eatTimeNeeded;
     [Range(0, 1)]
     public float markPercentage;
-    public float markCurrentTime;
+    protected float markCurrentTime;
     public float markTimeNeeded;
 
     //Public Methods

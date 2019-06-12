@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2739560040248654629}
   - component: {fileID: 7642149820979197902}
   - component: {fileID: 3979273347559982295}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 5067836499680771173}
   - component: {fileID: 8192182952597267951}
   - component: {fileID: 1972168716282959212}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Interactable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,15 +136,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableName: Sphere
-  canBeSniffed: 1
-  canBeBarked: 1
-  canBeEaten: 0
-  canBeMarked: 0
   isBeingSniffed: 0
   isBeingBarked: 0
   isBeingEaten: 0
   isBeingMarked: 0
-  SniffTimeNeeded: 1
-  barkTimeNeeded: 0.1
-  eatTimeNeeded: 0.1
-  markTimeNeeded: 1.2
+  hasBeenSniffed: 0
+  hasBeenBarked: 0
+  hasBeenEaten: 0
+  hasBeenMarked: 0
+  sniffPercentage: 0
+  sniffTimeNeeded: 1
+  barkPercentage: 0
+  barkTimeNeeded: 1
+  eatPercentage: 0
+  eatTimeNeeded: 1
+  markPercentage: 0
+  markTimeNeeded: 1

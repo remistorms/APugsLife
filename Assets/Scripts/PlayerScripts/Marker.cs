@@ -4,46 +4,63 @@ using UnityEngine;
 
 public class Marker : MonoBehaviour
 {
-    /*
-    public bool isMarking = false;
-    public float waterLevel;
-    public float waterDepleteSpeed;
-    public Transform markerPosition;
+    public Color GizmoColor;
+    public int MarkerLevel = 1;
+    public float MarkerRange = 1.0f;
+    public LayerMask layerMask;
 
+    public List<Interactable> interactablesInsideMarkerRange;
 
     private void Update()
     {
-        if ( isMarking)
+        if (Input.GetButtonDown("Fire2"))
         {
-            Mark();
-        }
-    }
+            //Debug.Log("Fire Button 2 has been pressed");
+            //Create a sphere
+            Collider[] collidersInRange = Physics.OverlapSphere(transform.position, MarkerRange, layerMask);
+            interactablesInsideMarkerRange = new List<Interactable>();
 
-    public void Mark()
-    {
-        if (waterLevel <= 0)
-        {
-            waterLevel = 0;
-        }
-        else
-        {
-            Collider[] colliders = Physics.OverlapSphere(markerPosition.position, 1f);
-
-            foreach (var col in colliders)
+            if (collidersInRange.Length > 0)
             {
-                if (col.GetComponent<Markable>() != null)
+                for (int i = 0; i < collidersInRange.Length; i++)
                 {
-                    col.GetComponent<Markable>().Interact( Time.deltaTime * waterDepleteSpeed );
+                    if (collidersInRange[i].GetComponent<Interactable>() != null)
+                    {
+                        Interactable interactable = collidersInRange[i].GetComponent<Interactable>();
+                        interactable.isBeingMarked = true;
+                        interactablesInsideMarkerRange.Add(interactable);
+                    }
                 }
             }
 
-            waterLevel -= Time.deltaTime * waterDepleteSpeed;
+        }
+
+        if (Input.GetButtonUp("Fire2"))
+        {
+            //Debug.Log("Fire Button 2 has been released");
+
+            if (interactablesInsideMarkerRange.Count > 0)
+            {
+                for (int i = 0; i < interactablesInsideMarkerRange.Count; i++)
+                {
+                    interactablesInsideMarkerRange[i].isBeingMarked = false;
+                }
+                interactablesInsideMarkerRange.Clear();
+            }
         }
     }
 
-    public void FillWaterLevel(float _waterLevel)
+    private void OnDrawGizmos()
     {
-        waterLevel += _waterLevel;
+        Gizmos.color = GizmoColor;
+        if (Input.GetButtonUp("Fire2"))
+        {
+            Gizmos.DrawSphere(transform.position, MarkerRange);
+        }
+        else
+        {
+            Gizmos.DrawWireSphere(transform.position, MarkerRange);
+        }
+
     }
-    */
 }
